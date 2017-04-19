@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="CDP">
+    <meta name="genertor" content="VSCode">
+    <meta name="description" content="这是一个关于睡眠的网站">
+    <meta name="keywords" content="sleep, sleeping, 睡觉, 睡眠, 眠猪网">
+    <title>睡觉是一门艺术</title>
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1>眠猪网</h1>
+            <h2 id="sub-header">关于睡觉的那些事儿</h2>
+        </div>
+        <div class="navigation">
+            <ul>                
+                <li><a href="homepage.html">首页</a></li>
+                <li><a href="called.html">所谓睡眠</a></li>
+                <li><a href="blackeyes.html">黑眼眶</a></li>
+                <li><a href="music.html">入眠曲</a></li>
+                <li><a href="calendar.html">日历</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="123.html">凑数</a></li>
+                <li><a href="beauty.html">好看</a></li>
+            </ul>        
+        </div>
+        <div id="content">
+          <div id="calendar">
+              <div class="title">
+                  <div id="prev"> << </div>
+                  <span id='CalendarYear'>2017</span>年 <span id='CalendarMonth'>4</span>月
+                  <div id="next"> >> </div>
+              </div>
+              <div class="body">
+                  <div class="lightgrey calist">
+                    <ul>
+                      <li>日</li>
+                      <li>一</li>
+                      <li>二</li>
+                      <li>三</li>
+                      <li>四</li>
+                      <li>五</li>
+                      <li>六</li>
+                    </ul>
+                  </div>
+                  <div class="darkgrey calist">
+                     <ul id="days">
+                     </ul>
+                  </div>
+              </div>
+          </div>
+        </div>        
+    </div>
+
+<script>
+var month_olympic = [31,29,31,30,31,30,31,31,30,31,30,31];
+var month_normal = [31,28,31,30,31,30,31,31,30,31,30,31];
+var month_name = ["1","2","3","4","5","6","7","8","9","10","11","12"];
+var holder = document.getElementById("days");
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
+var cMonth = document.getElementById("CalendarMonth");
+var cYear = document.getElementById("CalendarYear");
+var myDate = new Date();
+var myYear = myDate.getFullYear();
+var myMonth = myDate.getMonth();
+var myDay = myDate.getDate();
+
+function dayStart(month, year) {
+    var tmpDate = new Date(year, month, 1);
+    return (tmpDate.getDay());
+}
+function daysMonth (month, year) {
+    var tmp = year % 4;
+    if (tmp == 0) {
+        return (month_olympic[month]);
+    } else {
+        return (month_normal[month]);
+    }
+}
+function refreshDate(){
+	var str = "";
+	var totalDay = daysMonth(myMonth, myYear); 
+	var firstDay = dayStart(myMonth, myYear); 
+	var myclass;
+	for(var i=0; i<firstDay; i++){ 
+		str += "<li></li>"; 
+	}
+	for(var i=1; i<=totalDay; i++){
+		if((i<myDay && myYear==myDate.getFullYear() && myMonth==myDate.getMonth()) || 
+        myYear<myDate.getFullYear() || ( myYear==myDate.getFullYear() && myMonth<myDate.getMonth())){ 
+			myclass = " class='lightgrey'"; 
+		}else{
+			myclass = " class='darkgrey'"; 
+		}
+		str += "<li"+myclass+">"+i+"</li>"; 
+	}
+	holder.innerHTML = str; 
+	cMonth.innerHTML = month_name[myMonth]; 
+	cYear.innerHTML = myYear; 
+}
+refreshDate();
+</script>
+
+</body>
+</html>
