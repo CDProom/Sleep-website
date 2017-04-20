@@ -1,0 +1,16 @@
+document.writeln("        <div id=\'header\'>");
+document.writeln("            <h1>眠猪网</h1>");
+document.writeln("            <h2 id=\'sub-header\'>关于睡觉的那些事儿</h2>");
+document.writeln("        </div>");
+document.writeln("        <div class=\'navigation\'>");
+document.writeln("            <ul>                ");
+document.writeln("                <li><a href=\'homepage.html\'>首页</a></li>");
+document.writeln("                <li><a href=\'called.html\'>所谓睡眠</a></li>");
+document.writeln("                <li><a href=\'blackeyes.html\'>黑眼眶</a></li>");
+document.writeln("                <li><a href=\'music.html\'>入眠曲</a></li>");
+document.writeln("                <li><a href=\'calendar.html\'>日历</a></li>");
+document.writeln("                <li><a href=\'about.html\'>关于我们</a></li>");
+document.writeln("                <li><a href=\'123.html\'>凑数</a></li>");
+document.writeln("                <li><a href=\'beauty.html\'>好看</a></li>");
+document.writeln("            </ul>        ");
+document.writeln("        </div>");
