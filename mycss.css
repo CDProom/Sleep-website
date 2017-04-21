@@ -97,15 +97,17 @@ div#calendar {
     margin: 0;
     padding: 0;
     font-weight: bold;
-
+    
 }
 .calist ul li {
     display: block;
     float: left;
     font-size: 20px;    
-    width:12%;
-    margin: 2px;
-    padding: 2px;
+    width:14.28%;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 36px;
+    height: 36px;
 }
 .lightgrey {
     color:#a8a8a8;
@@ -115,4 +117,8 @@ div#calendar {
 }
 .green {
     color:#6ac13c;
+}
+.greenbox {
+	border:1px solid #6ac13c;
+    background:#e9f8df;
 }

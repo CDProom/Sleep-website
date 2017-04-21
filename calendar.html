@@ -42,9 +42,9 @@
     </div>
 
 <script>
-var month_olympic = [31,29,31,30,31,30,31,31,30,31,30,31];
-var month_normal = [31,28,31,30,31,30,31,31,30,31,30,31];
-var month_name = ["1","2","3","4","5","6","7","8","9","10","11","12"];
+var olympicMonth = [31,29,31,30,31,30,31,31,30,31,30,31];
+var normalMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+var monthName = ["1","2","3","4","5","6","7","8","9","10","11","12"];
 var holder = document.getElementById("days");
 var prev = document.getElementById("prev");
 var next = document.getElementById("next");
@@ -62,9 +62,9 @@ function dayStart(month, year) {
 function daysMonth (month, year) {
     var tmp = year % 4;
     if (tmp == 0) {
-        return (month_olympic[month]);
+        return (olympicMonth[month]);
     } else {
-        return (month_normal[month]);
+        return (normalMonth[month]);
     }
 }
 function refreshDate(){
@@ -80,14 +80,14 @@ function refreshDate(){
         myYear<myDate.getFullYear() || ( myYear==myDate.getFullYear() && myMonth<myDate.getMonth())){ 
 			myclass = " class='lightgrey'"; 
         }else if (i==myDay && myYear==myDate.getFullYear() && myMonth==myDate.getMonth()){
-            myclass = " class='green'";
+            myclass = " class='green greenbox'";
 		}else{
 			myclass = " class='darkgrey'"; 
 		}
 		str += "<li"+myclass+">"+i+"</li>"; 
 	}
 	holder.innerHTML = str; 
-	cMonth.innerHTML = month_name[myMonth]; 
+	cMonth.innerHTML = monthName[myMonth]; 
 	cYear.innerHTML = myYear; 
 }
 
