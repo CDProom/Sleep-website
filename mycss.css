@@ -28,7 +28,7 @@ body {
 .navigation ul {
     list-style-type: none;
     margin: 0;
-    padding: 0 6em;
+    padding: 1em 6em;
     overflow:hidden;
     background-color: #F5F8FA;
     text-align: center;
@@ -36,7 +36,7 @@ body {
 .navigation li {
     float: left;
 }
-.navigation a:link, a:visited  {
+.navigation a:link, .navigation a:visited  {
     display: block;
     width: 100px;
     margin-right: 5px;
@@ -47,11 +47,10 @@ body {
     background-color: #98bf21;
     padding: 10px;
 }
-.navigation a:hover, a:active  {
+.navigation a:hover, .navigation a:active  {
     background-color: #7A991A;
 }
 #content {
-    text-indent: 5em;
     background-color: #FFFFFF;
     padding: 10px;
     color:black;
@@ -71,7 +70,32 @@ body {
     margin: 50px;
 }
 #main li {
-    margin: 10px;
+    margin: 10px 0;
+}
+
+/*页脚*/
+#footer {
+    background-color: #F5F8FA;
+    overflow: hidden;
+}
+#footer ul {
+    list-style-type: none;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+#footer li {
+    width: 40%;
+    float:left;
+    padding: 20px;
+    text-align: center;
+}
+#footer a:link, #footer a:visited {
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    color:black;
+    padding: 10px;
 }
 
 /*日历css*/
@@ -80,24 +104,24 @@ div#calendar {
     height: 300px;
     background-color: #FFFFFF;
     border: 5px solid grey;
-    margin: 5em 20em;
-    text-indent: 0;
+    margin: 5em 24em;
 }
 .title {
     font-size: 30px;
 }
 #prev {
     float:left;
+    font-size: 30px;
 }
 #next {
     float:right;
+    font-size: 30px;
 }
 .calist ul {
     width:100%;
     margin: 0;
     padding: 0;
-    font-weight: bold;
-    
+    font-weight: bold;    
 }
 .calist ul li {
     display: block;
